@@ -1,0 +1,76 @@
+/* import font from goole fonts */
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display|Raleway');
+
+/* Color paletter */
+$red: rgba(185, 42, 22, 1);
+$gray: rgba(211, 211, 211, 1);
+$black: rgba(35, 31, 32, 1);
+$orange: rgba(244, 170, 9, 1);
+$blue: rgba(9, 172, 193, 1);
+
+$serif: 'Playfair Display', serif;
+$sans-serif: 'Raleway', sans-serif;
+
+$default-border-radius: 20px;
+
+$small: (
+  'min-width': 480px,
+  'columns': susy-repeat(4),
+  'gutters': 1/6,
+);
+
+$medium: (
+  'min-width': 640px,
+  'columns': susy-repeat(12),
+  'gutters': 1/6,
+);
+
+$large: (
+  'min-width': 960px,
+  'columns': susy-repeat(12),
+  'gutters': 1/6,
+);
+
+@mixin susy-at(
+  $config,
+  $maxWidth: false
+) {
+  //  parse and normalize any shorthand arguments
+  $config: susy-compile($config);
+
+  // build min-and-max queries
+  $min: map-get($config, 'min-width');
+  $min: if($min, '(min-width: #{$min})', null);  
+  $max: if($maxWidth, '(max-width: #{$maxWidth})', null);
+
+  // combine them if we need both
+  $and: if($min and $max, '#{$min} and #{$max}', null);
+  // or fall back to the value we need…
+  $query: $and or $min or $max;
+
+  // apply the results…
+  @media #{$query} {
+    @include susy-use($config) {
+      @content;
+    }
+  }
+}
+
+@mixin susy-use(
+  $config
+) {
+  //  parse and normalize any shorthand arguments
+  $config: susy-compile($config);
+
+  // record the global settings -
+  // and update the global variable with our new settings
+  $global: $susy;
+  $susy: map-merge($susy, $config) !global;
+
+  // any content inside this mixin
+  // will use the local settings
+  @content;
+
+  // return the global variable to its initial value
+  $susy: $global !global;
+}
