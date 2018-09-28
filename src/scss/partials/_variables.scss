@@ -1,20 +1,26 @@
 /* import font from goole fonts */
-@import url('https://fonts.googleapis.com/css?family=Playfair+Display|Raleway');
+@import url('https://fonts.googleapis.com/css?family=Dosis:400,700|Raleway:400,400i,500,500i,700');
 
 /* Color paletter */
-$red: rgba(185, 42, 22, 1);
-$gray: rgba(211, 211, 211, 1);
-$black: rgba(35, 31, 32, 1);
-$orange: rgba(244, 170, 9, 1);
-$blue: rgba(9, 172, 193, 1);
+$white: rgba(255, 255, 255, 1);
+$offWhite: rgba(243, 243, 243, 1);
+$yellow: rgba(246, 185, 8, 1);
+$lightYellow: rgba(246, 187, 8, 0.60);
+$black: rgb(0, 0, 0);
+$lightBlack: rgba(59, 59, 59, 1);
+$gray: rgba(188, 191, 196, 1);
 
-$serif: 'Playfair Display', serif;
-$sans-serif: 'Raleway', sans-serif;
+$link-text-color: $lightBlack;
+$link-text-color-hover: $yellow;
+
+$dosis: 'Dosis', sans-serif;
+$raleway: 'Raleway', sans-serif;
 
 $default-border-radius: 20px;
+$button-border-radius: 50px;
 
 $small: (
-  'min-width': 480px,
+  'min-width': 320px,
   'columns': susy-repeat(4),
   'gutters': 1/6,
 );

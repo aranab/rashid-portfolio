@@ -3,14 +3,16 @@
 }
 
 body {    
-    font-family: $sans-serif;
+    font-family: $raleway;
     font-size: 16px;
     line-height: 1.6;
-    color: $black;
+    background-color: $white;
+    color: $lightBlack;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: $serif;
+    font-family: $dosis;
+    font-weight: bold;
 }
 
 h1 {
@@ -25,32 +27,72 @@ h3 {
     font-size: 26px;
 }
 
-// Form
-#{$all-text-inputs} {
-    border: 1px solid $gray;
-    padding: 10px;
+a {
+    color: $link-text-color;
+    text-decoration: none;
+
+    &:hover {
+        color: $link-text-color-hover;
+    }
 }
 
-#{$all-text-inputs-focus},
-#{$all-text-inputs-hover},
-#{$all-text-inputs-active} {
-    border: 1px solid $red;
-}
+// Form
+// #{$all-text-inputs} {
+//     border: 1px solid $gray;
+//     padding: 10px;
+// }
+
+// #{$all-text-inputs-focus},
+// #{$all-text-inputs-hover},
+// #{$all-text-inputs-active} {
+//     border: 1px solid $red;
+// }
 
 // Button
-#{$all-buttons} {
-    background-color: $red;
-    border: 1px solid $gray;
-    color: $gray;
-    padding: 10px;
+%btn {
+    display: inline-block;
+    padding: 9px 20px;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    border: none;
+    border-radius: $button-border-radius;
+    font-family: $raleway;
+    user-select: none;
 }
 
-#{$all-buttons-focus},
-#{$all-buttons-hover},
-#{$all-buttons-active} {
-    background-color: $gray;
-    border: 1px solid $red;
-    color: $red;
+.btn-hire-me {
+    @extend %btn;
+    color: $white !important;
+    background-color: $yellow;
+    &::after {
+        font-family: 'Font Awesome 5 Free';
+        content: fa-content($fa-var-paper-plane);
+        margin-right: -0.60em;
+        margin-left: 0.8em;
+        background-color: $white;
+        border-radius: 50%;
+        color: $gray;
+        padding: 5px;
+    }
+    &::hover {
+        color: $lightBlack;
+    }
+}
+
+.btn-mobile-nav {
+    @extend %btn;
+    color: $white !important;
+    background-color: $lightBlack; 
+    border-radius: 20%;  
+    &::after {
+        font-family: 'Font Awesome 5 Free';
+        content: fa-content($fa-var-bars);       
+    }
+    &::hover {
+        color: $yellow;
+    }
 }
 
 nav {
@@ -66,7 +108,38 @@ nav {
         padding: 0 10px;
 
         &:hover {
-            color: $red;
+            color: $yellow;
         }
+    }
+}
+
+.social-nav a {
+    color: $yellow;
+    padding: 0 5px;
+    font-size: 1rem;
+
+    &::before {
+        font-family: "Font Awesome 5 Brands";
+        padding-right: 5px;
+    }
+
+    &.twitter::before {       
+        content: fa-content($fa-var-twitter);        
+    }
+
+    &.facebook::before {       
+        content: fa-content($fa-var-facebook);
+    }
+
+    &.linkedin::before {        
+        content: fa-content($fa-var-linkedin);
+    }
+
+    &.instagram::before {        
+        content: fa-content($fa-var-instagram);
+    }
+
+    &:hover {
+        color: $white;
     }
 }

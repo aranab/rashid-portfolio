@@ -1,0 +1,63 @@
+.hero {
+    color: $white;
+    font-size: 0.75rem;
+	margin: 0;
+	width: 100%;
+	display: table;
+	.container {
+		display: table-cell;
+        vertical-align: bottom;
+        padding-bottom: 10px;
+		h1 {
+			color: $yellow;
+			font-family: $dosis;
+			font-size: 2rem;
+			line-height: 105%;
+			margin: 0;
+			padding: 0 10%;
+		}
+		p {
+			padding: 0 10%;
+			margin: 0.2em 0;
+        }        
+        nav {
+            padding: 0 10%;
+            ul {
+               padding: 0; 
+            }
+        }
+	}
+}
+
+.jumbotron {
+    @include backImage('images/hero.png', 300px);
+    margin-top: 0;
+}
+
+// .feature img {
+//     border-radius: $default-border-radius;
+//     @include size(100%, auto);
+// }
+
+// .customer img {
+//     border-radius: $default-border-radius;
+//     @include size(150px);    
+// }
+
+// .testimonials {
+//     background: $blue;
+//     color: $gray;
+//     text-align: center;
+//     padding-top: 50px;
+//     margin-top: 50px;
+//     padding-bottom: 50px;
+
+//     .name {
+//         display: block;
+//     }
+
+//     .quote {
+//         font-style: italic;
+//         font-family: $serif;
+//     }
+// }

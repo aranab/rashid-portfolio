@@ -4,80 +4,109 @@ $susy: (
     'gutters': 1/6
 );
 
-.wrap {
+.container {
     //background: susy-svg-grid() no-repeat scroll;
-    max-width: 70%;
+    @include susy-at($small, 639px) { 
+        max-width: 90%;
+    } 
+    @include susy-at($medium) { 
+        max-width: 60.9375%;
+    }    
     margin-left: auto;
     margin-right: auto;
     @include clearfix;
 }
 
 .site-branding {
-    @include susy-at($medium) {
-        float: left;
-        width: span(3);
-    }
+    //background: susy-svg-grid() no-repeat scroll;
+    float: left;
+    line-height: 0;
+    width: span(3);
 }
 
 .header-nav {
-    @include susy-at($medium) {
-        float: right;
-        width: span(9);
+    //background: susy-svg-grid() no-repeat scroll;
+    display: none;
+    @include susy-at($large) {
+        display: inline-block;
+        float: left;
+        width: span(6);
         padding-top: 40px;
     }
 }
 
-.features {
-    @include clearfix;
-}
-
-.features .feature {    
-    float: left;  
-
-    @include susy-at($medium, 959px) {
-        //background: susy-svg-grid() no-repeat scroll;        
-        width: span(6);
-        margin-right: gutter();
-        
-        &:nth-of-type(even) {
-            float: right;
-            margin-right: 0;
-        }
-    } 
-     
-    @include susy-at($large) {
-        //background: susy-svg-grid() no-repeat scroll;
-        width: span(3);
-        margin-right: gutter();
-
-        &:last-child {
-            float: right;
-            margin-right: 0;
-        }
-    }    
-}
-
-.content {
-    @include susy-at($large) {
-        //background: susy-svg-grid() no-repeat scroll;
-        float: left;
-        width: span(8);
-        margin-right: gutter();
+.header-addon {
+    //background: susy-svg-grid() no-repeat scroll; 
+    float: right;       
+    padding-top: 22px;
+    width: span(7);
+    ul li:last-child {
+        float: right;
     }
-}
-
-.sidebar { 
-    @include susy-at($large) {
-        //background: susy-svg-grid() no-repeat scroll;
-        float: right;   
-        width: span(4);
-    }
-}
-
-.testimonial {
     @include susy-at($large) { 
-        // background: susy-svg-grid() no-repeat scroll;
-        width: span(6);
-        margin-left: span(3 wide);
+        width: span(3);
+        ul li {
+            float: right;
+        }
+        ul li:last-child {
+            display: none;
+            float: none;
+        }
     }    
 }
+
+
+// .features {
+//     @include clearfix;
+// }
+
+// .features .feature {    
+//     float: left;  
+
+//     @include susy-at($medium, 959px) {
+//         //background: susy-svg-grid() no-repeat scroll;        
+//         width: span(6);
+//         margin-right: gutter();
+        
+//         &:nth-of-type(even) {
+//             float: right;
+//             margin-right: 0;
+//         }
+//     } 
+     
+//     @include susy-at($large) {
+//         //background: susy-svg-grid() no-repeat scroll;
+//         width: span(3);
+//         margin-right: gutter();
+
+//         &:last-child {
+//             float: right;
+//             margin-right: 0;
+//         }
+//     }    
+// }
+
+// .content {
+//     @include susy-at($large) {
+//         //background: susy-svg-grid() no-repeat scroll;
+//         float: left;
+//         width: span(8);
+//         margin-right: gutter();
+//     }
+// }
+
+// .sidebar { 
+//     @include susy-at($large) {
+//         //background: susy-svg-grid() no-repeat scroll;
+//         float: right;   
+//         width: span(4);
+//     }
+// }
+
+// .testimonial {
+//     @include susy-at($large) { 
+//         // background: susy-svg-grid() no-repeat scroll;
+//         width: span(6);
+//         margin-left: span(3 wide);
+//     }    
+// }
