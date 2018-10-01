@@ -3,14 +3,16 @@
 }
 
 body {    
-    font-family: $sans-serif;
-    font-size: 16px;
+    font-family: $raleway;
+    font-size: 12px;
     line-height: 1.6;
-    color: $black;
+    background-color: $white;
+    color: $lightBlack;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: $serif;
+    font-family: $dosis;
+    font-weight: bold;
 }
 
 h1 {
@@ -25,34 +27,88 @@ h3 {
     font-size: 26px;
 }
 
-// Form
-#{$all-text-inputs} {
-    border: 1px solid $gray;
-    padding: 10px;
+a {
+    color: $link-text-color;
+    text-decoration: none;
+
+    &:hover {
+        color: $link-text-color-hover;
+    }
 }
 
-#{$all-text-inputs-focus},
-#{$all-text-inputs-hover},
-#{$all-text-inputs-active} {
-    border: 1px solid $red;
+/* Button */
+%btn {
+    display: inline-block;    
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    border: none;
+    border-radius: $button-border-radius;
+    font-family: $raleway;
+    user-select: none;
 }
 
-// Button
-#{$all-buttons} {
-    background-color: $red;
-    border: 1px solid $gray;
-    color: $gray;
-    padding: 10px;
+.btn-hire-me {
+    @extend %btn;
+    padding: 9px 20px;
+    color: $white !important;
+    background-color: $yellow;
+    &::after {
+        font-family: 'Font Awesome 5 Free';
+        content: fa-content($fa-var-paper-plane);
+        margin-right: -0.60em;
+        margin-left: 0.8em;
+        background-color: $white;
+        border-radius: 50%;
+        color: $gray;
+        padding: 5px;
+    }
+    &::hover {
+        color: $lightBlack;
+    }
 }
 
-#{$all-buttons-focus},
-#{$all-buttons-hover},
-#{$all-buttons-active} {
-    background-color: $gray;
-    border: 1px solid $red;
-    color: $red;
+.btn-mobile-nav {
+    @extend %btn;
+    padding: 9px 20px;
+    color: $white !important;
+    background-color: $lightBlack; 
+    border-radius: 20%;  
+    &::after {
+        font-family: 'Font Awesome 5 Free';
+        content: fa-content($fa-var-bars);       
+    }
+    &::hover {
+        color: $yellow;
+    }
 }
 
+.btn-know-more {
+    @extend %btn;
+    padding: 9px 20px;
+    background: $btn-ground-black-white;
+    &::before {
+        font-family: 'Font Awesome 5 Free';
+        content: fa-content($fa-var-eye);
+        color: $white;
+        margin-right: 40px;     
+    }  
+}
+
+.btn-submit {
+    @extend %btn;
+    padding: 9px 20px;
+    background: $btn-ground-yellow-white;
+    &::before {
+        font-family: 'Font Awesome 5 Free';
+        content: fa-content($fa-var-eye);
+        color: $white;
+        margin-right: 40px;     
+    }  
+}
+
+/* navigation */
 nav {
     ul {
         list-style: none;
@@ -66,7 +122,165 @@ nav {
         padding: 0 10px;
 
         &:hover {
-            color: $red;
+            color: $yellow;
         }
     }
+}
+
+.social-nav {
+    a {
+        color: $yellow;
+        padding: 0 5px;
+        font-size: 1rem;
+    
+        &::before {
+            font-family: "Font Awesome 5 Brands";
+            padding-right: 5px;
+        }
+    
+        &.twitter::before {       
+            content: fa-content($fa-var-twitter);        
+        }
+    
+        &.facebook::before {       
+            content: fa-content($fa-var-facebook);
+        }
+    
+        &.linkedin::before {        
+            content: fa-content($fa-var-linkedin);
+        }
+    
+        &.instagram::before {        
+            content: fa-content($fa-var-instagram);
+        }
+    
+        &:hover {
+            color: $white;
+        }
+    }    
+}
+
+.feature-nav {
+    text-align: center;
+    margin-bottom: 20px;
+    ul {
+        padding: 0;
+    }
+    a {
+        color: $lightBlack;
+        border: 1px solid $lightBlack;
+        border-radius: $button-border-radius;
+        padding: 5px 10px;
+
+        &:hover {
+            color: $white;
+            background: $lightYellow;
+            border: none;
+            padding: 6px 11px;
+        }
+    }   
+}
+
+.express-addon {
+    ul {
+        margin: 0;
+        padding: 0;
+    }
+    a {
+        color: $lightBlack;
+        padding: 0 5px;
+        font-size: 1rem;
+    
+        &::before {
+            font-family: "Font Awesome 5 Free";
+            padding-right: 5px;
+        }
+    
+        &.like::before {       
+            content: fa-content($fa-var-heart);        
+        }
+    
+        &.dislike::before {       
+            content: fa-content($fa-var-thumbs-down);
+        }
+    
+        &:hover {
+            color: $yellow;
+        }
+    }    
+}
+
+.timeline-nav {
+    margin-top: -5px;
+    margin-left: 16px;    
+    border-left: 2px solid $gray;
+    ul {
+        padding-left: 25px;
+        li h4 {
+            font-family: $roboto;
+            margin-bottom: 5px;            
+            &::before {
+                content: ' ';
+			    background: $yellow;
+                border-radius: 50%;
+                padding: 0 7px;
+                margin-left: -33px;
+                margin-right: 19px;
+            }
+        }
+        li p:first-of-type {
+            margin-top: 3px;
+            margin-bottom: 0;
+            font-family: $roboto;
+            color: $yellow;
+        }
+        li p {
+            margin-top: 3px;
+            margin-bottom: 0;
+        }
+    }    
+}
+
+.skill-nav {
+    ul {
+        padding-left: 44px;
+    }
+    ul li {
+        display: block;
+        h5 {
+            font-family: $roboto;
+            font-weight: bold;
+            margin: 8px 0;
+        }
+        p {
+            width: 80%;
+            border-width: 3px;
+            border-style: solid;
+            margin: 5px 0;
+        }
+    }
+}
+
+/* progress bar */
+.progress {
+    width: 90%;
+    background: $lightBlack;
+    line-height: 22;
+    span {
+        display: block;
+        background: $yellow;
+        padding: 5px;
+    }
+}
+
+/* input-control */
+.input-control {
+    color: $white;    
+    width: 100%;
+    background: transparent;
+    padding: 10px 15px;
+    margin-top: 5px;
+    margin-bottom: 8px;
+    border: none;
+    border-bottom: 2px solid $gray;
 }

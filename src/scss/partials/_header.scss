@@ -1,0 +1,47 @@
+.site-header {
+    background-color: $offWhite;
+}
+
+.site-branding {   
+    float: left;
+    line-height: 0;
+    width: span(3);
+    padding: 5px 10px;
+    img {
+        margin: 0;
+        width: 60px;
+        height: 60px;
+    }
+}
+
+.header-nav {  
+    display: none;
+    font-size: 16px;
+    text-align: center;   
+    float: left;
+    width: span(6);
+    padding-top: 28px;
+    a {
+        padding: 0 7px;
+    }
+}
+
+.header-addon {   
+    float: right;       
+    padding-top: 22px;
+    width: span(8);    
+    ul li:last-child {
+        float: right;
+    } 
+}
+
+.header-nav,
+.header-addon {
+    ul {
+        margin: 0;
+        padding: 0;
+    }
+    a {
+        color: $lightBlack;
+    }    
+}

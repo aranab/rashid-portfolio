@@ -1,83 +1,513 @@
-// Susy map setup
-$susy: (
-    'columns': susy-repeat(12),
-    'gutters': 1/6
-);
-
-.wrap {
+.container {
     //background: susy-svg-grid() no-repeat scroll;
-    max-width: 70%;
     margin-left: auto;
     margin-right: auto;
     @include clearfix;
+    .title {
+        margin-top: 40px;
+        margin-left: 35%;
+        margin-bottom: 40px;        
+        p {
+            line-height: 2.2;
+		    width: 30%;
+		    border-bottom: 1px solid $yellow;
+        }
+        h2 {
+            margin-top: 10px;
+            margin-bottom: 20px;            
+            line-height: 1.1em;
+        }
+    }    
+    @include susy-at($smaller) { 
+        max-width: 98%;
+    } 
+    @include susy-at($small) { 
+        max-width: 90%;
+    } 
+    @include susy-at($medium) { 
+        max-width: 85%;
+    } 
+    @include susy-at($medium-large) { 
+        max-width: 75%;
+        .title { 
+            margin-top: 60px;
+            margin-bottom: 60px;
+            p {
+                font-size: 16px;
+                line-height: 2.5;
+                width: 20%;
+            }
+        }
+    }
+    @include susy-at($large) { 
+        max-width: 70%;
+        .title { 
+            margin-top: 80px;
+            margin-bottom: 80px;
+            h2 {
+                font-size: 40px;
+            }            
+        }
+    }   
 }
 
-.site-branding {
+/* header */
+.header-nav {      
+    @include susy-at($medium-large) {
+        display: block;
+    }
+    @include susy-at($large) {
+        font-size: 20px;             
+    }
+}
+
+.header-addon {
     @include susy-at($medium) {
-        float: left;
+        width: span(7);    
+    }    
+    @include susy-at($medium-large) { 
         width: span(3);
-    }
+        ul li {
+            float: right;
+        }
+        ul li:last-child {
+            display: none;
+            float: none;
+        }
+    }    
 }
 
-.header-nav {
+/* hero */
+.hero {
     @include susy-at($medium) {
-        float: right;
-        width: span(9);
-        padding-top: 40px;
+        .container {        
+            top: 45%;
+        }
+    }
+    @include susy-at($medium-large) {
+	    .container {        
+            top: 40%;		
+            h1 {
+                font-size: 3rem;
+                line-height: 105%;
+            }
+            p {
+                font-size: 1.5rem;
+            }        
+            .social-nav a {
+                font-size: 2.0rem;
+            }
+        }
+	}
+    @include susy-at($large) {
+	    .container {        
+            top: 45%;		
+            h1 {
+                font-size: 5rem;
+                line-height: 105%;
+            }
+            p {
+                font-size: 2rem;
+            }        
+            .social-nav a {
+                font-size: 2.5rem;
+            }
+        }
+    }
+    @include susy-at($extra-large) {
+        .container {        
+            top: 55%;		
+            h1 {
+                font-size: 6rem;
+            }
+        }
     }
 }
 
-.features {
-    @include clearfix;
+.jumbotron {
+    @include susy-at($medium) { 
+        height: 450px;
+    } 
+    @include susy-at($medium-large) { 
+        height: 600px;
+    } 
+    @include susy-at($large) {
+        height: 800px;
+    }
+    @include susy-at($extra-large) {
+        height: 970px;
+    }
 }
 
-.features .feature {    
-    float: left;  
+/* summery */
+.about-me { 
+    @include susy-at($medium) { 
+        width: 50%;
+        height: 365px;
+        float: right;
+        margin-top: -110px;
+        padding: 30px;
+        p:first-child {
+            margin-top: 0; 
+        }
+        p {
+            font-size: 12px;		
+        }
+        h2 {
+            font-size: 35px;
+        }
+    }
+    @include susy-at($medium-large) { 
+        margin-top: -95px;
+    }
+    @include susy-at($large) {        
+        padding: 2.4em 2.5em;
+        height: 400px;
+        p:first-child {
+            margin-top: 5px; 
+        }
+        p {
+            font-size: 16px;		
+        }
+        h2 {
+            font-size: 40px;
+        }
+    }
+}
 
-    @include susy-at($medium, 959px) {
-        //background: susy-svg-grid() no-repeat scroll;        
+.about-work {
+    @include susy-at($medium) { 
+        width: 50%;
+        height: 365px;
+        float: left;
+        margin-top: -110px;
+        padding: 50px 30px;
+        overflow: hidden;
+        .statistics {                  
+            p {
+                font-size: 12px;
+            }
+        }
+    }
+    @include susy-at($medium-large) { 
+        margin-top: -95px;
+    }
+    @include susy-at($large) {
+        padding: 55px;
+        height: 400px;
+        .statistics {                  
+            p {
+                font-size: 16px;
+            }
+        }
+    }
+}
+
+/* service */
+.offer {
+    @include susy-at($medium) {
+        float: left;  
         width: span(6);
         margin-right: gutter();
-        
+        padding: 20px 50px;        
         &:nth-of-type(even) {
+            float: right; 
+            margin-right: 0; 
+        }
+    }
+    @include susy-at($large) {
+        width: span(3);       
+    }
+}
+
+/* portfolio */
+.work {
+    width: span(6);
+    margin-right: gutter();	
+    float: left;
+    &:nth-of-type(2n+0) {
+        float: right;
+        margin-right: 0;
+    }   
+    @include susy-at($medium) {
+        width: span(4);
+        margin-right: gutter();	
+        float: left;
+        &:nth-of-type(2n+0) {
+            float: left;
+            margin-right: gutter();
+        }
+        &:nth-of-type(3n+0) {
             float: right;
             margin-right: 0;
+        }
+        span {
+            img {
+                width: 120px;
+                height: 120px;
+            }
         }
     } 
-     
-    @include susy-at($large) {
-        //background: susy-svg-grid() no-repeat scroll;
-        width: span(3);
-        margin-right: gutter();
+    @include susy-at($medium-large) { 
+        padding-top: 30px;
+        span {
+            img {
+                width: 200px;
+                height: 200px;
+            }
+        }
+        .work-addon {            
+            h3 {
+                font-size: 12px;
+            }
+        }
+    }  
+    @include susy-at($large) { 
+        padding-top: 50px;
+        span {
+            img {
+                width: 250px;
+                height: 250px;
+            }
+        }
+        .work-addon {            
+            h3 {
+                font-size: 16px;
+            }
+        }
+    }  
+}
 
-        &:last-child {
+/* resume */
+.achievement { 
+    @include susy-at($medium-large) {
+        float: left;
+        width: span(6);
+        margin-right: gutter();
+        &:nth-of-type(2n+0) {
             float: right;
             margin-right: 0;
         }
-    }    
+    }
 }
-
-.content {
-    @include susy-at($large) {
-        //background: susy-svg-grid() no-repeat scroll;
+.skill { 
+    @include susy-at($medium-large) {
         float: left;
-        width: span(8);
-        margin-right: gutter();
-    }
-}
-
-.sidebar { 
-    @include susy-at($large) {
-        //background: susy-svg-grid() no-repeat scroll;
-        float: right;   
-        width: span(4);
-    }
-}
-
-.testimonial {
-    @include susy-at($large) { 
-        // background: susy-svg-grid() no-repeat scroll;
         width: span(6);
-        margin-left: span(3 wide);
-    }    
+        margin-right: gutter();        
+    } 
+}
+.photo-slider {
+    @include susy-at($medium) {
+        img {
+            width: 100%;
+            height: 300px;
+        }
+    }
+    @include susy-at($medium-large) {
+        float: right;
+        width: span(6);
+        margin-right: 0;
+        padding-left: 44px;        
+    } 
+}
+
+/* testimonials */
+.testimonial {
+    @include susy-at($medium) { 
+        float: left;
+        width: span(4);
+        margin-right: gutter();
+        &:last-of-type {
+            float: right;
+            margin-right: 0;
+        }
+        blockquote {
+            font-size: 0.8rem;
+            padding: 20px 30px; 
+            &::before {
+                margin-left: -30px;
+			    margin-right: 13px;
+            }           
+        }
+    }
+}
+
+/* contact */
+.contact {    
+    @include susy-at($large) {
+        height: 800px;
+    }
+    @include susy-at($extra-large) {
+        height: 970px;
+    }
+}
+
+.contact-form {
+    @include susy-at($large) {
+        padding: 0 170px;
+        .info {
+            font-size: 16px;
+            padding: 0 70px;
+            margin-bottom: 100px;
+        }        
+    }
+    @include susy-at($extra-large) { 
+        padding: 0 200px;
+        .info {
+            font-size: 18px;
+            padding: 0 100px;
+            margin-bottom: 150px;
+        } 
+    }		
+}
+
+/* map */
+.google-map {
+    @include susy-at($medium) { 
+        height: 300px;
+        img {
+            height: 300px;
+        }
+    }
+    @include susy-at($large) { 
+        height: 500px;
+        img {
+            height: 500px;
+        }
+    }
+    @include susy-at($extra-large) { 
+        height: 600px;
+        img {
+            height: 600px;
+        }
+    }	
+}
+
+.contact-address {
+    @include susy-at($medium) {  
+        padding: 15px 25px;
+        .number, .email, .location {
+            ul {
+                padding-left: 44px;				
+            }
+            ul li:first-child {
+                font-size: 10px;			
+            }
+            ul li:last-child {
+                font-size: 10px;
+            }
+            &::before {
+                font-size: 10px;
+            }
+        }		
+        .number {							
+            &::before {
+                padding: 6px;				
+            }			
+        }
+        .email {					
+            &::before {
+                padding: 6px;					
+            }		
+        }
+        .location {			
+            &::before {			
+                padding: 7px 8px;					
+            }		
+        }
+    }
+    @include susy-at($large) {
+        padding: 35px 35px 40px 150px;
+        .number, .email, .location {            
+            ul li:first-child {
+                font-size: 14px;			
+            }
+            ul li:last-child {
+                font-size: 12px;
+            }
+            &::before {
+                font-size: 18px;
+            }
+        }		
+        .number {							
+            &::before {
+                padding: 8px;				
+            }			
+        }
+        .email {					
+            &::before {
+                padding: 8px;			
+            }		
+        }
+        .location {			
+            &::before {			
+                padding: 7px 10px;					
+            }		
+        }
+    }
+    @include susy-at($extra-large) {
+        padding-left: 200px;
+        .number, .email, .location {
+            ul {
+                padding-left: 60px;				
+            }
+            ul li:first-child {
+                font-size: 16px;			
+            }
+            ul li:last-child {
+                font-size: 14px;
+            }
+            &::before {
+                font-size: 22px;
+            }
+        }		
+        .number {							
+            &::before {
+                padding: 10px;				
+            }			
+        }
+        .email {					
+            &::before {
+                padding: 10px;			
+            }		
+        }
+        .location {			
+            &::before {			
+                padding: 7px 14px;					
+            }		
+        }
+    }
+}
+
+/* footer */
+footer {	
+	@include susy-at($medium) { 
+        font-size: 10px;
+    }
+    @include susy-at($medium-large) { 
+        font-size: 12px;
+        padding-top: 20px;
+        .powered {
+            margin-top: 4px;
+        }
+    }
+    @include susy-at($large) { 
+        font-size: 14px;
+        .logo {
+            img {
+                width: 70px;
+                height: 70px;
+            }
+        }
+    }
+    @include susy-at($extra-large) { 
+        font-size: 16px;
+        .logo {
+            img {
+                width: 80px;
+                height: 80px;
+            }
+        }
+    }
 }

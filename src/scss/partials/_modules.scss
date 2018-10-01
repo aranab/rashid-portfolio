@@ -1,0 +1,373 @@
+/* hero */
+.hero {
+    color: $white;
+    font-size: 0.75rem;
+	margin: 0;
+	width: 100%;
+	.container {
+		position: relative;
+		top: 50%;
+		left: 0;		
+		h1 {
+			color: $yellow;
+			font-family: $dosis;
+			font-size: 2rem;
+			line-height: 105%;
+			margin: 0;
+		}
+		p {
+			margin: 0.2em 0;
+        }        
+        nav {
+            ul {
+               padding: 0; 
+            }
+        }
+	}
+}
+
+.jumbotron {
+    @include backImage('images/hero.png', 300px, center top);
+	margin-top: 0;
+}
+
+/* summery */
+.about-me {
+	background-color: $lightYellow;
+	padding: 1em 1.5em;
+	margin-top: 20px;
+	p:first-child {
+		line-height: 2.2;
+		width: 30%;
+		border-bottom: 1px solid $white;
+	}
+	p {
+		font-size: 14px;
+		color: $white;		
+	}
+	h2 {
+		margin-top: 10px;
+		margin-bottom: 20px;
+		font-size: 40px;
+		color: $white;
+		line-height: 1.1em;
+	}
+}
+
+.about-work {
+	background-color: $lightBlack;
+	margin-top: 20px;
+	color: $white;
+	text-align: center;
+	@include clearfix;
+
+	.statistics { 
+		padding: 10px;
+		width: 50%;
+		float: left;
+		border-right: 2px solid $gray;
+		border-top: 2px solid $gray; 
+		&:nth-child(-n+2) {
+			border-top: none;
+		}
+		&:nth-child(even) {
+			border-right: none;
+		}		
+		h2 {
+			font-size: 25px;
+		}
+		p {
+			font-size: 14px;
+		}
+	}	
+}
+
+/* service */
+.offer {
+	text-align: center;
+	margin-bottom: 20px;
+	padding: 10px 50px 20px 50px;
+	span {
+		display: inline-block;
+		width: 85px;
+		height: 85px;
+		img {
+			width: 100%;
+		}
+	}	
+	h3 {
+		margin: 0;
+	}	
+	&:hover {
+		background: $moreLightYellow;
+		border-radius: $default-border-radius;
+		box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+	}
+}
+
+/* portfolio */
+.portfolio {
+    background-color: $offWhite;
+}
+
+.work {	 
+	background-color: $gray;	
+	padding-top: 10px;
+	margin-bottom: 20px;
+	border-top-left-radius: $default-border-radius;
+	border-top-right-radius: $default-border-radius;
+	text-align: center;		
+	span {
+		margin: 0 auto;		
+		display: block;
+		img {
+			width: 80px;
+			height: 80px;
+		}
+	}
+	.work-addon {
+		background: $white;
+		text-align: left;
+		padding: 10px; 
+		h3 {
+			padding: 0;
+			margin: 0;
+			width: span(6);
+			margin-right: gutter();
+			font-size: 10px;
+			display: inline-block;
+		}
+		nav {
+			float: right;
+		}
+	}
+}
+
+/* resume */
+.achievement {
+	width: span(12);
+	margin-bottom: 20px;	
+	
+	h3 {
+		font-family: $raleway;
+		font-weight: bold;
+		font-size: 16px;
+		padding-left: 44px;
+		margin: 0;
+		&::before {
+			content: ' ';
+			background: $yellow;
+			border-radius: 50%;
+			padding: 10px 18px;
+			margin-left: -44px;
+			margin-right: 8px;
+		}
+	}
+}
+
+.skill {
+	width: span(12);
+	margin-bottom: 20px;	
+	h3, p {
+		font-family: $raleway;
+		padding-left: 44px;
+	}
+	h3 {		
+		font-weight: bold;
+		font-size: 16px;		
+	}
+}
+
+.photo-slider {
+	width: 100%;
+	text-align: center;	
+	img {
+		width: 100%;
+		height: 200px;
+		border-radius: $default-border-radius;
+	}
+}
+
+/* testimonials */
+.testimonial {
+	width: span(12);
+	text-align: center;
+	margin-bottom: 50px;
+	span {
+		display: inline-block;
+		position: relative;
+		width: 100px;
+		height: 100px;
+		overflow: hidden;		
+		border-radius: 50%;
+		border: 1px solid $yellow;
+		padding: 3px;
+		margin-bottom: 12px;
+		img {
+			border-radius: 50%;
+			width: 100%;
+			height: 100%;		
+		}
+	}
+	h3 {
+		font-family: $raleway;
+		font-size: 1rem;
+		font-weight: 500;
+		margin: 0;
+	}
+	h4 {
+		font-family: $raleway;
+		font-size: 1rem;
+		font-weight: 400;
+		margin: 0;
+	}
+	blockquote {
+		font-family: $raleway;
+		font-size: 1rem;
+		font-weight: 500;
+		font-style: italic;
+		margin: 0;
+		padding: 20px 50px;		
+		&::before {
+			font-family: 'Font Awesome 5 Free';
+			content: fa-content($fa-var-quote-left);
+			color: $gray;
+			margin-left: -45px;
+			margin-right: 20px; 
+		}
+		&:hover {
+			border-radius: $default-border-radius;
+			background: $lightBlack;
+			color: white;
+		}
+	}
+
+}
+
+/* contact */
+.contact {
+	@include backImage('images/contact-bg.png', 600px);
+	margin-top: 0;
+	color: $white;	
+}
+
+.contact-form {
+	padding: 0 20px;
+	.info {
+		text-align: center;
+		padding: 0 20px;
+	}
+	.form {
+		width: 100%;
+		.form-inputs {
+			margin-bottom: 20px;
+			@include clearfix;
+			.half {
+				width: span(6);
+				margin-right: gutter();
+				float: left;
+				&:nth-of-type(even) {
+					float: right;
+					margin-right: 0;
+				}					
+			}
+			h4 {
+				font-family: $raleway;
+				font-weight: 500;
+				font-size: .8rem;
+				margin: 0;
+			}					
+		}
+		.form-btn {
+			text-align: center;
+			margin-bottom: 20px;
+		}		
+	}	
+}
+
+/* map */
+.google-map {
+	width: 100%;
+	height: 200px;
+	img {
+		width: 100%;
+		height: 200px;
+	}
+}
+
+.map .container{
+	position: relative;
+}
+
+.contact-address {
+	width: 100%;
+	background: $lightBlack;
+	border-top-left-radius: $default-border-radius;
+	border-top-right-radius: $default-border-radius;
+	padding: 10px;
+	color: $white;
+	float: left;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	.addon {
+		width: span(4);
+		margin-right: gutter();
+		float: left;		
+		overflow: hidden;
+		&:nth-child(3){
+			float: right;	
+			margin-right: 0;
+		}
+	}
+	.number, .email, .location {
+		ul {
+			padding-left: 22px;				
+		}
+		ul li {
+			display: block;
+		}
+		ul li:first-child {
+			font-family: $raleway;
+			font-weight: 500;
+			font-size: 8px;			
+		}
+		ul li:last-child {
+			font-family: $roboto;
+			font-weight: 300;
+			font-style: italic;
+			font-size: 7px;
+		}
+		&::before {
+			color: $yellow;
+			font-size: 8px;	
+			background-color: $white;
+			border-radius: 50%;			
+			float: left;
+			position: relative;
+			top: 0px;
+			left: 0;
+		}
+	}		
+	.number {							
+		&::before {
+			font-family: 'Font Awesome 5 Free';
+			content: fa-content($fa-var-phone);
+			padding: 5px;				
+		}			
+	}
+	.email {					
+		&::before {
+			font-family: 'Font Awesome 5 Free';
+			content: fa-content($fa-var-envelope);
+			padding: 5px;					
+		}		
+	}
+	.location {			
+		&::before {
+			font-family: 'Font Awesome 5 Free';
+			content: fa-content($fa-var-map-marker-alt);			
+			padding: 5px 6px;					
+		}		
+	}
+}
