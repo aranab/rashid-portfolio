@@ -1,0 +1,38 @@
+footer {	
+	margin: 0;
+	padding: 10px 0;	
+	font-size: 8px;	
+	.copyright { 
+		width: span(5);
+		margin-right: gutter();
+		float: left;
+		margin-top: 10px;
+	}
+	.logo {
+		width: span(2);
+		margin-right: gutter();
+		float: left;
+		text-align: center;
+		img {
+			width: 50px;
+			height: 50px;
+		}
+	}
+	.powered {
+		float: right;
+		width: span(5);
+		margin-top: 7px;
+		margin-right: 0; 		
+		text-align: right;
+		p {
+			margin-top: 5px;
+			margin-bottom: 5px;
+		}			
+		a {
+			color: $yellow;
+			&:hover {
+				color: $lightYellow;
+			}
+		}		
+	}
+}
