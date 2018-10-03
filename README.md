@@ -10,6 +10,8 @@ A html theming project of portfolio of rashid
  - [nodejs](https://nodejs.org/en/)
  - [npm](https://www.npmjs.com/)
  - HTML5
+ 
+Live site view at https://aranab.github.io/rashid-portfolio/
 
 ### Run Command
  - Initialize node package install: Run `> npm install`
