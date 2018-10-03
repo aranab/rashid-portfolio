@@ -161,13 +161,16 @@ module.exports = function (grunt) {
             },
             scripts: {
                 files: [
-                    '<%= paths.scripts.src %>',
+                    '<%= paths.scripts.anySrc %>',
                     '<%= paths.scripts.dest %>'
                 ],
                 tasks: [
                     'browserify',
                     'uglify'
-                ]
+                ],
+                options: {
+                    livereload: true
+                }
             },
             livereload: {
                 options: {

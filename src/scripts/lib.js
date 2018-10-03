@@ -1,14 +1,14 @@
 var lib = (function() {
     var mMenu = function(close) {
-        var dom = document.getElementById("mb-nav-container");
-        if (close === true) {
-            dom.style.display = "none";
+        var dom = document.getElementById("mb-nav-anime");
+        if (close === true) {          
+            dom.style.transform = "translateX(0)";
             return;
         }
-        if (dom.style.display === "block") {
-            dom.style.display = "none";
+        if (dom.style.transform === "translateX(-300px)") {   
+            dom.style.transform = "translateX(0)";
         } else {
-            dom.style.display = "block";
+            dom.style.transform = "translateX(-300px)";
         }
     };
     return {
