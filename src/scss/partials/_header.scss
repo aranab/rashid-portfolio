@@ -45,3 +45,14 @@
         color: $lightBlack;
     }    
 }
+
+#mb-nav-container { 
+    display: none;   
+    width: span(6);
+    padding-top: 25px;
+    background: $lightBlack;
+    position: absolute;
+    top: 70px;
+    right: 0; 
+    z-index: 1001;
+}

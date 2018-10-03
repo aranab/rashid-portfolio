@@ -52,8 +52,6 @@
     "supernew": false,
     "validthis": false,
     "globals": {
-        "$": false,
-        "jquery": false,
         "require": false,
         "console": false,
         "module": false,

@@ -93,7 +93,10 @@ a {
         content: fa-content($fa-var-eye);
         color: $white;
         margin-right: 40px;     
-    }  
+    } 
+    &::hover {
+        color: $yellow;
+    } 
 }
 
 .btn-submit {
@@ -105,7 +108,27 @@ a {
         content: fa-content($fa-var-eye);
         color: $white;
         margin-right: 40px;     
-    }  
+    } 
+    &::hover {
+        color: $yellow;
+    } 
+}
+
+.btn-close {
+    position: absolute;
+    top: 10px;
+    right: 18px;
+    &::before {
+        font-family: 'Font Awesome 5 Free';
+        content: fa-content($fa-var-times);
+        background-color: $white;
+        border-radius: 50%;
+        color: $gray;
+        padding: 5px;    
+    }
+    &::hover {
+        color: $yellow;
+    }
 }
 
 /* navigation */
@@ -113,17 +136,40 @@ nav {
     ul {
         list-style: none;
     }
-
     li {
         display: inline-block;
     }
-
     a {
         padding: 0 10px;
-
         &:hover {
             color: $yellow;
         }
+    }
+}
+
+.mobile-nav {
+    ul {
+        margin: 0;
+        padding: 0;
+    } 
+    li {
+        display: block;
+        padding: 10px 0 7px 15px;
+        border-bottom: 1px solid $gray;
+        &:last-of-type {
+            border-bottom: none;
+        }
+        &:hover {
+            background: $lightYellow;            
+        }
+    }
+    a {
+        font-size: 14px;
+        font-weight: bold;
+        color: $white;
+        &:hover {
+            color: $white;            
+        }       
     }
 }
 

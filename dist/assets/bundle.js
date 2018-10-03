@@ -1,3 +1,4 @@
+(function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 /*!
  * jQuery JavaScript Library v3.3.1
  * https://jquery.com/
@@ -10363,8 +10364,38 @@ if ( !noGlobal ) {
 return jQuery;
 } );
 
-function name(msg) {
-    console.log(msg);
-}
+},{}],2:[function(require,module,exports){
+var jQuery = require('jquery');
+var lib = require('./lib');
 
-name('Md. Arafat Rahman Rana');
+(function ($) {
+    $(document).ready(function () {        
+        $('.btn-mobile-nav').click(function () {            
+            lib.mobileMenu();
+        });
+        $('.btn-close').click(function () {
+            lib.mobileMenu(true);
+        });
+    });
+})(jQuery);
+},{"./lib":3,"jquery":1}],3:[function(require,module,exports){
+var lib = (function() {
+    var mMenu = function(close) {
+        var dom = document.getElementById("mb-nav-container");
+        if (close === true) {
+            dom.style.display = "none";
+            return;
+        }
+        if (dom.style.display === "block") {
+            dom.style.display = "none";
+        } else {
+            dom.style.display = "block";
+        }
+    };
+    return {
+        mobileMenu: mMenu
+    };
+})();
+
+module.exports = lib;
+},{}]},{},[2]);

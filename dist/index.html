@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <div class="site-container">
+    <div id="home" class="site-container">
         <header class="site-header">
             <div class="container">
                 <div class="site-branding">
@@ -19,19 +19,31 @@
                 </div><!-- site-branding -->
                 <nav class="header-nav">
                     <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Service</a></li>
-                        <li><a href="#">Portfolio</a></li>
-                        <li><a href="#">Resume</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#service">Service</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#resume">Resume</a></li>
+                        <li><a href="#contact">Contact</a></li>
                     </ul>
                 </nav><!-- header-nav -->
                 <nav class="header-addon">
                     <ul>
                         <li><a href="#" class="btn-hire-me">Hire Me</a></li>
-                        <li><a href="#" class="btn-mobile-nav"></a></li>
+                        <li><a href="javascript:void(0);" class="btn-mobile-nav"></a></li>
                     </ul>
                 </nav><!-- header-addon -->
+                <div id="mb-nav-container">
+                    <a href="javascript:void(0);" class="btn-close"></a>
+                    <nav class="mobile-nav">
+                        <ul>
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#service">Service</a></li>
+                            <li><a href="#portfolio">Portfolio</a></li>
+                            <li><a href="#resume">Resume</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </nav><!-- mb-nav -->
+                </div><!-- mb-nav-container -->
             </div><!-- container -->
         </header><!-- site-header -->
 
@@ -87,7 +99,7 @@
             </div><!-- container -->
         </section><!-- summery -->
 
-        <section class="service">
+        <section id="service" class="service">
             <div class="container">
                 <div class="title">
                     <p>SERVICE</p>
@@ -128,7 +140,7 @@
             </div><!-- container -->
         </section><!-- service -->
 
-        <section class="portfolio">
+        <section id="portfolio" class="portfolio">
             <div class="container">
                 <div class="title">
                     <p>PORTFOLIO</p>
@@ -220,7 +232,7 @@
             </div><!-- container -->
         </section><!-- portfolio -->
 
-        <section class="resume">
+        <section id="resume" class="resume">
             <div class="container">
                 <div class="title">
                     <p>REUME</p>
@@ -382,7 +394,7 @@
             </div><!-- container -->
         </section><!-- testimonials -->
 
-        <section class="contact">
+        <section id="contact" class="contact">
             <div class="container">
                 <div class="title">
                     <p>CONTACT</p>
