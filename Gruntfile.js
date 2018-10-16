@@ -20,7 +20,8 @@ module.exports = function (grunt) {
                 allDestCss: 'dist/assets/*.css'                
             },
             scripts: {
-                src: 'src/scripts/**/*.js',                       
+                src: 'src/scripts/index.js',
+                anySrc: 'src/scripts/**/*.js',                       
                 dest: 'dist/assets/bundle.js',
                 minify: 'dist/assets/bundle.min.js',              
                 allDestJs: 'dist/assets/*.js'
@@ -71,17 +72,30 @@ module.exports = function (grunt) {
         },
 
         /**
-         * Grunt Contrib Concat
-         * Concatenate JavaScript files
-         * https://www.npmjs.com/package/grunt-contrib-concat
+         * Grunt Browserify
+         * Grunt task for node-browserify
+         * https://www.npmjs.com/package/grunt-browserify
          */
-        concat: {
-            dist: {
-                src: [
-                    '<%= paths.lib.jquery %>',
-                    '<%= paths.scripts.src %>'
-                ],
-                dest: '<%= paths.scripts.dest %>'
+        browserify: {
+            dist: { 
+                files: {
+                    '<%= paths.scripts.dest %>' : '<%= paths.scripts.src %>'
+                },
+                options: {
+                    transform: [
+                        [
+                            'babelify',
+                            {
+                                presets: [
+                                    "@babel/preset-env"
+                                ] 
+                            }
+                        ]
+                    ],
+                    browserifyOptions: {
+                        debug: true
+                    }
+                }               
             }
         },
 
@@ -94,6 +108,8 @@ module.exports = function (grunt) {
             my_target: {
                 options: {
                     sourceMap: true,
+                    compress: true,
+                    mangle: true,
                     banner: '/*! <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> */\n'
                 },
                 files: {
@@ -121,7 +137,7 @@ module.exports = function (grunt) {
         jshint: {
             files: [
                 'gruntfile.js',
-                '<%= paths.scripts.src %>'
+                '<%= paths.scripts.anySrc %>'
             ],
             options: { 
                 jshintrc: true,
@@ -140,6 +156,7 @@ module.exports = function (grunt) {
                     hostname: 'localhost',
                     port: 9001,
                     base: 'dist',
+                    open: true,
                     livereload: true
                 }
             }
@@ -161,13 +178,16 @@ module.exports = function (grunt) {
             },
             scripts: {
                 files: [
-                    '<%= paths.scripts.src %>',
+                    '<%= paths.scripts.anySrc %>',
                     '<%= paths.scripts.dest %>'
                 ],
                 tasks: [
-                    'concat',
+                    'browserify',
                     'uglify'
-                ]
+                ],
+                options: {
+                    livereload: true
+                }
             },
             livereload: {
                 options: {
@@ -191,7 +211,7 @@ module.exports = function (grunt) {
     grunt.registerTask('build', [
         'clean',
         'sass',
-        'concat',
+        'browserify',
         'uglify',
     ]);
 

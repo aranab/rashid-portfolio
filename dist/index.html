@@ -19,23 +19,35 @@
                 </div><!-- site-branding -->
                 <nav class="header-nav">
                     <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Service</a></li>
-                        <li><a href="#">Portfolio</a></li>
-                        <li><a href="#">Resume</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#service">Service</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#resume">Resume</a></li>
+                        <li><a href="#contact">Contact</a></li>
                     </ul>
                 </nav><!-- header-nav -->
                 <nav class="header-addon">
                     <ul>
                         <li><a href="#" class="btn-hire-me">Hire Me</a></li>
-                        <li><a href="#" class="btn-mobile-nav"></a></li>
+                        <li><a href="javascript:void(0);" class="btn-mobile-nav"></a></li>
                     </ul>
                 </nav><!-- header-addon -->
+                <div id="mb-menu" class="mb-nav-container">
+                    <a href="javascript:void(0);" class="btn-close"></a>
+                    <nav class="mobile-nav">
+                        <ul>
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#service">Service</a></li>
+                            <li><a href="#portfolio">Portfolio</a></li>
+                            <li><a href="#resume">Resume</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </nav><!-- mb-nav -->
+                </div><!-- mb-nav-container -->
             </div><!-- container -->
         </header><!-- site-header -->
 
-        <section class="hero jumbotron">
+        <section id="home" class="hero jumbotron">
             <div class="container">
                 <p>Hello I'm</p>
                 <h1>RASHIDUL ISLAM</h1>
@@ -66,7 +78,7 @@
                     </p>
                     <a href="#" class="btn-know-more">Know More</a>
                 </div><!-- about-me -->
-                <div class="about-work">
+                <div id="aboutWorks" class="about-work">
                     <div class="statistics">
                         <h2>482</h2>
                         <p>Projects Completed</p>
@@ -87,7 +99,7 @@
             </div><!-- container -->
         </section><!-- summery -->
 
-        <section class="service">
+        <section id="service" class="service">
             <div class="container">
                 <div class="title">
                     <p>SERVICE</p>
@@ -128,24 +140,32 @@
             </div><!-- container -->
         </section><!-- service -->
 
-        <section class="portfolio">
+        <section id="portfolio" class="portfolio">
             <div class="container">
                 <div class="title">
                     <p>PORTFOLIO</p>
                     <h2>My Featured Work</h2>
                 </div><!-- title -->
-                <div class="feature-work">
-                    <nav class="feature-nav">
-                        <ul>
-                            <li><a href="#">All</a></li>
-                            <li><a href="#">Print</a></li>
-                            <li><a href="#">UI/UX</a></li>
-                            <li><a href="#">Web Design</a></li>
-                            <li><a href="#">Logo</a></li>
-                        </ul>
-                    </nav><!-- feature-nav -->
-                    <article class="work">
-                        <span><img src="assets/images/work-1.png" /></span>
+                <nav class="feature-nav filter-options">
+                    <ul>
+                        <li><a class="active" data-group="All">All</a></li>
+                        <li><a class="" data-group="Print">Print</a></li>
+                        <li><a class="" data-group="UI/UX">UI/UX</a></li>
+                        <li><a class="" data-group="WebDesign">Web Design</a></li>
+                        <li><a class="" data-group="Logo">Logo</a></li>
+                    </ul>
+                </nav><!-- feature-nav -->
+                <div class="feature-works">
+                    <figure class="work column" data-groups='["Logo"]' data-date-created="2018-10-10" data-title="simple image">
+                        <div class="block">
+                            <a href="assets/images/work-1.png" class="popup" data-lity>
+                                <div class="aspect aspect--4x3">
+                                    <div class="aspect__inner">
+                                        <img src="assets/images/work-1.png" alt="work 1">
+                                    </div><!-- aspect__inner -->
+                                </div><!-- aspect -->
+                            </a><!-- popup -->
+                        </div><!-- block -->
                         <div class="work-addon">
                             <h3>HTML Template</h3>
                             <nav class="express-addon">
@@ -153,11 +173,19 @@
                                     <li><a href="#" class="like"></a></li>
                                     <li><a href="#" class="dislike"></a></li>
                                 </ul>
-                            </nav>
-                        </div>
-                    </article><!-- work -->
-                    <article class="work">
-                        <span><img src="assets/images/work-2.png" /></span>
+                            </nav><!-- express-addon -->
+                        </div><!-- work-addon -->
+                    </figure><!-- work -->
+                    <figure class="work column" data-groups='["WebDesign"]' data-date-created="2018-10-10" data-title="simple image">
+                        <div class="block">
+                            <a href="assets/images/work-2.png" class="popup" data-lity>
+                                <div class="aspect aspect--4x3">
+                                    <div class="aspect__inner">
+                                        <img src="assets/images/work-2.png" alt="work 1">
+                                    </div><!-- aspect__inner -->
+                                </div><!-- aspect -->
+                            </a><!-- popup -->
+                        </div><!-- block -->
                         <div class="work-addon">
                             <h3>HTML Template</h3>
                             <nav class="express-addon">
@@ -165,11 +193,19 @@
                                     <li><a href="#" class="like"></a></li>
                                     <li><a href="#" class="dislike"></a></li>
                                 </ul>
-                            </nav>
-                        </div>
-                    </article><!-- work -->
-                    <article class="work">
-                        <span><img src="assets/images/work-3.png" /></span>
+                            </nav><!-- express-addon -->
+                        </div><!-- work-addon -->
+                    </figure><!-- work -->
+                    <figure class="work column" data-groups='["Print"]' data-date-created="2018-10-10" data-title="simple image">
+                        <div class="block">
+                            <a href="assets/images/work-3.png" class="popup" data-lity>
+                                <div class="aspect aspect--4x3">
+                                    <div class="aspect__inner">
+                                        <img src="assets/images/work-3.png" alt="work 1">
+                                    </div><!-- aspect__inner -->
+                                </div><!-- aspect -->
+                            </a><!-- popup -->
+                        </div><!-- block -->
                         <div class="work-addon">
                             <h3>HTML Template</h3>
                             <nav class="express-addon">
@@ -177,11 +213,19 @@
                                     <li><a href="#" class="like"></a></li>
                                     <li><a href="#" class="dislike"></a></li>
                                 </ul>
-                            </nav>
-                        </div>
-                    </article><!-- work -->
-                    <article class="work">
-                        <span><img src="assets/images/work-4.png" /></span>
+                            </nav><!-- express-addon -->
+                        </div><!-- work-addon -->
+                    </figure><!-- work -->
+                    <figure class="work column" data-groups='["Logo"]' data-date-created="2018-10-10" data-title="simple image">
+                        <div class="block">
+                            <a href="assets/images/work-4.png" class="popup" data-lity>
+                                <div class="aspect aspect--4x3">
+                                    <div class="aspect__inner">
+                                        <img src="assets/images/work-4.png" alt="work 1">
+                                    </div><!-- aspect__inner -->
+                                </div><!-- aspect -->
+                            </a><!-- popup -->
+                        </div><!-- block -->
                         <div class="work-addon">
                             <h3>HTML Template</h3>
                             <nav class="express-addon">
@@ -189,11 +233,19 @@
                                     <li><a href="#" class="like"></a></li>
                                     <li><a href="#" class="dislike"></a></li>
                                 </ul>
-                            </nav>
-                        </div>
-                    </article><!-- work -->
-                    <article class="work">
-                        <span><img src="assets/images/work-5.png" /></span>
+                            </nav><!-- express-addon -->
+                        </div><!-- work-addon -->
+                    </figure><!-- work -->
+                    <figure class="work column" data-groups='["UI/UX"]' data-date-created="2018-10-10" data-title="simple image">
+                        <div class="block">
+                            <a href="assets/images/work-5.png" class="popup" data-lity>
+                                <div class="aspect aspect--4x3">
+                                    <div class="aspect__inner">
+                                        <img src="assets/images/work-5.png" alt="work 1">
+                                    </div><!-- aspect__inner -->
+                                </div><!-- aspect -->
+                            </a><!-- popup -->
+                        </div><!-- block -->
                         <div class="work-addon">
                             <h3>HTML Template</h3>
                             <nav class="express-addon">
@@ -201,11 +253,19 @@
                                     <li><a href="#" class="like"></a></li>
                                     <li><a href="#" class="dislike"></a></li>
                                 </ul>
-                            </nav>
-                        </div>
-                    </article><!-- work -->
-                    <article class="work">
-                        <span><img src="assets/images/work-6.png" /></span>
+                            </nav><!-- express-addon -->
+                        </div><!-- work-addon -->
+                    </figure><!-- work -->
+                    <figure class="work column" data-groups='["Print"]' data-date-created="2018-10-10" data-title="simple image">
+                        <div class="block">
+                            <a href="assets/images/work-6.png" class="popup" data-lity>
+                                <div class="aspect aspect--4x3">
+                                    <div class="aspect__inner">
+                                        <img src="assets/images/work-6.png" alt="work 1">
+                                    </div><!-- aspect__inner -->
+                                </div><!-- aspect -->
+                            </a><!-- popup -->
+                        </div><!-- block -->
                         <div class="work-addon">
                             <h3>HTML Template</h3>
                             <nav class="express-addon">
@@ -213,14 +273,15 @@
                                     <li><a href="#" class="like"></a></li>
                                     <li><a href="#" class="dislike"></a></li>
                                 </ul>
-                            </nav>
-                        </div>
-                    </article><!-- work -->
-                </div><!-- feature-work -->
+                            </nav><!-- express-addon -->
+                        </div><!-- work-addon -->
+                    </figure><!-- work -->
+                    <div class="column sizer"></div>
+                </div><!-- feature-works -->
             </div><!-- container -->
         </section><!-- portfolio -->
 
-        <section class="resume">
+        <section id="resume" class="resume">
             <div class="container">
                 <div class="title">
                     <p>REUME</p>
@@ -300,7 +361,7 @@
                         </ul>
                     </nav><!-- timeline-nav -->
                 </div><!-- achievement -->
-                <div class="skill">
+                <div id="skills" class="skill">
                     <h3>My Special Skill</h3>
                     <p>
                         This is Photoshop's version of Lorem Ipsum.
@@ -313,32 +374,43 @@
                             <li>
                                 <h5>GRAPHIC DESIGN</h5>
                                 <div class="progress">
-                                    <span style="width:95%"></span>
+                                    <div class="progress-bar" data-progress-value="95">
+                                        <div class="progress-value"></div>
+                                    </div>
                                 </div>
                             </li>
                             <li>
                                 <h5>WEB DESIGN</h5>
                                 <div class="progress">
-                                    <span style="width:70%"></span>
+                                    <div class="progress-bar" data-progress-value="70">
+                                        <div class="progress-value"></div>
+                                    </div>
                                 </div>
                             </li>
                             <li>
                                 <h5>HTML/CSS</h5>
                                 <div class="progress">
-                                    <span style="width:85%"></span>
+                                    <div class="progress-bar" data-progress-value="85">
+                                        <div class="progress-value"></div>
+                                    </div>
                                 </div>
                             </li>
                             <li>
                                 <h5>JQUERY</h5>
                                 <div class="progress">
-                                    <span style="width:60%"></span>
+                                    <div class="progress-bar" data-progress-value="60">
+                                        <div class="progress-value"></div>
+                                    </div>
                                 </div>
                             </li>
                         </ul>
                     </nav><!-- skill-nav -->
                 </div><!-- skill -->
-                <div class="photo-slider">
-                    <img src="assets/images/man.png" alt="man">
+                <div class="photo-slider owl-carousel owl-theme">
+                    <div class="item"><img src="assets/images/city.jpg" alt="city"></div>
+                    <div class="item"><img src="assets/images/man.png" alt="man"></div>
+                    <div class="item"><img src="assets/images/sun.jpg" alt="sun"></div>
+                    <div class="item"><img src="assets/images/cobweb.jpg" alt="cobweb"></div>
                 </div><!-- photo-slider -->
             </div><!-- container -->
         </section><!-- resume -->
@@ -349,40 +421,120 @@
                     <p>TESTIMONIALS</p>
                     <h2>Happy Clients</h2>
                 </div><!-- title -->
-                <article class="testimonial">
-                    <span><img src="assets/images/client_1_r.png" /></span>
-                    <h3>robert jakson</h3>
-                    <h4>Western Block, California</h4>
-                    <blockquote>
-                        This is Photoshop's version of Lorem Ipsum.
-                        Proin gravida nibh vel velit auctor aliquet.
-                        Aenean sollicitudin, lorem quis bibendum"
-                    </blockquote>
-                </article><!-- testimonial -->
-                <article class="testimonial">
-                    <span><img src="assets/images/client_2_r.png" /></span>
-                    <h3>robert jakson</h3>
-                    <h4>Western Block, California</h4>
-                    <blockquote>
-                        This is Photoshop's version of Lorem Ipsum.
-                        Proin gravida nibh vel velit auctor aliquet.
-                        Aenean sollicitudin, lorem quis bibendum"
-                    </blockquote>
-                </article><!-- testimonial -->
-                <article class="testimonial">
-                    <span><img src="assets/images/client_3_r.png" /></span>
-                    <h3>robert jakson</h3>
-                    <h4>Western Block, California</h4>
-                    <blockquote>
-                        This is Photoshop's version of Lorem Ipsum.
-                        Proin gravida nibh vel velit auctor aliquet.
-                        Aenean sollicitudin, lorem quis bibendum"
-                    </blockquote>
-                </article><!-- testimonial -->
+                <div class="client-slider owl-carousel owl-theme">
+                    <div class="item">
+                        <article class="testimonial">
+                            <span><img src="assets/images/client_1_r.png" /></span>
+                            <h3>robert jakson</h3>
+                            <h4>Western Block, California</h4>
+                            <blockquote>
+                                This is Photoshop's version of Lorem Ipsum.
+                                Proin gravida nibh vel velit auctor aliquet.
+                                Aenean sollicitudin, lorem quis bibendum"
+                            </blockquote>
+                        </article><!-- testimonial -->
+                    </div><!-- item -->
+                    <div class="item">
+                        <article class="testimonial">
+                            <span><img src="assets/images/client_2_r.png" /></span>
+                            <h3>robert jakson</h3>
+                            <h4>Western Block, California</h4>
+                            <blockquote>
+                                This is Photoshop's version of Lorem Ipsum.
+                                Proin gravida nibh vel velit auctor aliquet.
+                                Aenean sollicitudin, lorem quis bibendum"
+                            </blockquote>
+                        </article><!-- testimonial -->
+                    </div><!-- item -->
+                    <div class="item">
+                        <article class="testimonial">
+                            <span><img src="assets/images/client_3_r.png" /></span>
+                            <h3>robert jakson</h3>
+                            <h4>Western Block, California</h4>
+                            <blockquote>
+                                This is Photoshop's version of Lorem Ipsum.
+                                Proin gravida nibh vel velit auctor aliquet.
+                                Aenean sollicitudin, lorem quis bibendum"
+                            </blockquote>
+                        </article><!-- testimonial -->
+                    </div><!-- item -->
+                    <div class="item">
+                        <article class="testimonial">
+                            <span><img src="assets/images/client_1_r.png" /></span>
+                            <h3>robert jakson</h3>
+                            <h4>Western Block, California</h4>
+                            <blockquote>
+                                This is Photoshop's version of Lorem Ipsum.
+                                Proin gravida nibh vel velit auctor aliquet.
+                                Aenean sollicitudin, lorem quis bibendum"
+                            </blockquote>
+                        </article><!-- testimonial -->
+                    </div><!-- item -->
+                    <div class="item">
+                        <article class="testimonial">
+                            <span><img src="assets/images/client_2_r.png" /></span>
+                            <h3>robert jakson</h3>
+                            <h4>Western Block, California</h4>
+                            <blockquote>
+                                This is Photoshop's version of Lorem Ipsum.
+                                Proin gravida nibh vel velit auctor aliquet.
+                                Aenean sollicitudin, lorem quis bibendum"
+                            </blockquote>
+                        </article><!-- testimonial -->
+                    </div><!-- item -->
+                    <div class="item">
+                        <article class="testimonial">
+                            <span><img src="assets/images/client_3_r.png" /></span>
+                            <h3>robert jakson</h3>
+                            <h4>Western Block, California</h4>
+                            <blockquote>
+                                This is Photoshop's version of Lorem Ipsum.
+                                Proin gravida nibh vel velit auctor aliquet.
+                                Aenean sollicitudin, lorem quis bibendum"
+                            </blockquote>
+                        </article><!-- testimonial -->
+                    </div><!-- item -->
+                    <div class="item">
+                        <article class="testimonial">
+                            <span><img src="assets/images/client_1_r.png" /></span>
+                            <h3>robert jakson</h3>
+                            <h4>Western Block, California</h4>
+                            <blockquote>
+                                This is Photoshop's version of Lorem Ipsum.
+                                Proin gravida nibh vel velit auctor aliquet.
+                                Aenean sollicitudin, lorem quis bibendum"
+                            </blockquote>
+                        </article><!-- testimonial -->
+                    </div><!-- item -->
+                    <div class="item">
+                        <article class="testimonial">
+                            <span><img src="assets/images/client_2_r.png" /></span>
+                            <h3>robert jakson</h3>
+                            <h4>Western Block, California</h4>
+                            <blockquote>
+                                This is Photoshop's version of Lorem Ipsum.
+                                Proin gravida nibh vel velit auctor aliquet.
+                                Aenean sollicitudin, lorem quis bibendum"
+                            </blockquote>
+                        </article><!-- testimonial -->
+                    </div><!-- item -->
+                    <div class="item">
+                        <article class="testimonial">
+                            <span><img src="assets/images/client_3_r.png" /></span>
+                            <h3>robert jakson</h3>
+                            <h4>Western Block, California</h4>
+                            <blockquote>
+                                This is Photoshop's version of Lorem Ipsum.
+                                Proin gravida nibh vel velit auctor aliquet.
+                                Aenean sollicitudin, lorem quis bibendum"
+                            </blockquote>
+                        </article><!-- testimonial -->
+                    </div><!-- item -->
+                </div><!-- client-slider -->
             </div><!-- container -->
         </section><!-- testimonials -->
 
-        <section class="contact">
+        <section id="contact" class="contact">
             <div class="container">
                 <div class="title">
                     <p>CONTACT</p>
