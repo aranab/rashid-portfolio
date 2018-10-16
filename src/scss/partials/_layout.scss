@@ -80,6 +80,7 @@
 /* hero */
 .hero {
     @include susy-at($medium) {
+        z-index: -1;
         .container {        
             top: 45%;
         }
@@ -145,8 +146,9 @@
         width: 50%;
         height: 365px;
         float: right;
-        margin-top: -110px;
+        margin-top: 0px;
         padding: 30px;
+        z-index: 1;
         p:first-child {
             margin-top: 0; 
         }
@@ -156,9 +158,6 @@
         h2 {
             font-size: 35px;
         }
-    }
-    @include susy-at($medium-large) { 
-        margin-top: -95px;
     }
     @include susy-at($large) {        
         padding: 2.4em 2.5em;
@@ -180,7 +179,7 @@
         width: 50%;
         height: 365px;
         float: left;
-        margin-top: -110px;
+        margin-top: 0px;
         padding: 50px 30px;
         overflow: hidden;
         .statistics {                  
@@ -188,9 +187,6 @@
                 font-size: 12px;
             }
         }
-    }
-    @include susy-at($medium-large) { 
-        margin-top: -95px;
     }
     @include susy-at($large) {
         padding: 55px;
@@ -221,61 +217,60 @@
 }
 
 /* portfolio */
-.work {
-    width: span(6);
-    margin-right: gutter();	
-    float: left;
-    &:nth-of-type(2n+0) {
-        float: right;
-        margin-right: 0;
-    }   
-    @include susy-at($medium) {
-        width: span(4);
-        margin-right: gutter();	
-        float: left;
-        &:nth-of-type(2n+0) {
-            float: left;
-            margin-right: gutter();
-        }
-        &:nth-of-type(3n+0) {
-            float: right;
-            margin-right: 0;
-        }
-        span {
-            img {
-                width: 120px;
-                height: 120px;
+.feature-works {
+    @include susy-at($medium) { 
+        .column {
+            width: span(4);
+            padding-left: 12px;
+            padding-right: 12px;
+            margin-bottom: 18px;  
+            .work-addon { 
+                h6 {
+                    font-size: 0.8rem;
+                } 
+                .express-addon {
+                    a {
+                        font-size: 0.9rem;
+                    }
+                }
             }
         }
-    } 
-    @include susy-at($medium-large) { 
-        padding-top: 30px;
-        span {
-            img {
-                width: 200px;
-                height: 200px;
-            }
-        }
-        .work-addon {            
-            h3 {
-                font-size: 12px;
-            }
-        }
-    }  
+    }
     @include susy-at($large) { 
-        padding-top: 50px;
-        span {
-            img {
-                width: 250px;
-                height: 250px;
+        .column {
+            padding-left: 15px;
+            padding-right: 15px;
+            margin-bottom: 20px;
+            .work-addon { 
+                padding: 12px;
+                h6 {
+                    font-size: 0.9rem;
+                    margin: 2px 0;
+                } 
+                .express-addon {
+                    a {
+                        font-size: 1rem;
+                    }
+                }
             }
         }
-        .work-addon {            
-            h3 {
-                font-size: 16px;
+    }
+    @include susy-at($extra-large) { 
+        .column {
+            width: span(3);
+            .work-addon { 
+                padding: 14px;
+                h6 {
+                    font-size: 1rem;
+                } 
+                .express-addon {
+                    a {
+                        font-size: 1.1rem;
+                    }
+                }
             }
         }
-    }  
+    }
 }
 
 /* resume */
@@ -314,21 +309,9 @@
 
 /* testimonials */
 .testimonial {
-    @include susy-at($medium) { 
-        float: left;
-        width: span(4);
-        margin-right: gutter();
-        &:last-of-type {
-            float: right;
-            margin-right: 0;
-        }
+    @include susy-at($medium-large) {         
         blockquote {
-            font-size: 0.8rem;
-            padding: 20px 30px; 
-            &::before {
-                margin-left: -30px;
-			    margin-right: 13px;
-            }           
+            font-size: 1rem;                     
         }
     }
 }
@@ -342,7 +325,6 @@
         height: 970px;
     }
 }
-
 .contact-form {
     @include susy-at($large) {
         padding: 0 170px;
@@ -383,7 +365,6 @@
         }
     }	
 }
-
 .contact-address {
     @include susy-at($medium) {  
         padding: 15px 25px;

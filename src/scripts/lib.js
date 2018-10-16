@@ -1,18 +1,30 @@
-var lib = (function() {
+var lib = (function() {    
+
+    var mobileNavClose = true;
+
+    var HasClass = function (el, className) {
+        return new RegExp(' ' + className + ' ').test(' ' + el.className + ' ');
+    };
+
     var mMenu = function(close) {
-        var dom = document.getElementById("mb-nav-anime");
-        if (close === true) {          
-            dom.style.transform = "translateX(0)";
+        var dom = document.getElementById("mb-menu");
+        if (close === true) {
+            this.mobileNavClose = true;          
+            dom.classList.remove('open');
             return;
         }
-        if (dom.style.transform === "translateX(-300px)") {   
-            dom.style.transform = "translateX(0)";
+        if (HasClass(dom, 'open')) {   
+            this.mobileNavClose = true;
+            dom.classList.remove('open');
         } else {
-            dom.style.transform = "translateX(-300px)";
+            this.mobileNavClose = false;
+            dom.classList.add('open');
         }
     };
+
     return {
-        mobileMenu: mMenu
+        mobileMenu: mMenu,
+        mobileNavClose: mobileNavClose
     };
 })();
 

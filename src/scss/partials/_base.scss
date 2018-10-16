@@ -64,7 +64,7 @@ a {
         color: $gray;
         padding: 5px;
     }
-    &::hover {
+    &:hover {
         color: $lightBlack;
     }
 }
@@ -79,7 +79,7 @@ a {
         font-family: 'Font Awesome 5 Free';
         content: fa-content($fa-var-bars);       
     }
-    &::hover {
+    &:hover {
         color: $yellow;
     }
 }
@@ -94,7 +94,7 @@ a {
         color: $white;
         margin-right: 40px;     
     } 
-    &::hover {
+    &:hover {
         color: $yellow;
     } 
 }
@@ -109,7 +109,7 @@ a {
         color: $white;
         margin-right: 40px;     
     } 
-    &::hover {
+    &:hover {
         color: $yellow;
     } 
 }
@@ -124,9 +124,9 @@ a {
         background-color: $white;
         border-radius: 50%;
         color: $gray;
-        padding: 5px;    
+        padding: 4px 5px;     
     }
-    &::hover {
+    &:hover {
         color: $yellow;
     }
 }
@@ -213,47 +213,26 @@ nav {
         padding: 0;
     }
     a {
+        white-space: nowrap;
+        vertical-align: middle;
+        cursor: pointer;
         color: $lightBlack;
         border: 1px solid $lightBlack;
         border-radius: $button-border-radius;
         padding: 5px 10px;
-
         &:hover {
             color: $white;
             background: $lightYellow;
             border: none;
             padding: 6px 11px;
         }
-    }   
-}
-
-.express-addon {
-    ul {
-        margin: 0;
-        padding: 0;
     }
-    a {
-        color: $lightBlack;
-        padding: 0 5px;
-        font-size: 1rem;
-    
-        &::before {
-            font-family: "Font Awesome 5 Free";
-            padding-right: 5px;
-        }
-    
-        &.like::before {       
-            content: fa-content($fa-var-heart);        
-        }
-    
-        &.dislike::before {       
-            content: fa-content($fa-var-thumbs-down);
-        }
-    
-        &:hover {
-            color: $yellow;
-        }
-    }    
+    .active {
+        color: $white;
+        background: $lightYellow;
+        border: none;
+        padding: 6px 11px;
+    }   
 }
 
 .timeline-nav {
@@ -311,11 +290,37 @@ nav {
 .progress {
     width: 90%;
     background: $lightBlack;
-    line-height: 22;
-    span {
-        display: block;
-        background: $yellow;
-        padding: 5px;
+    height: 10px;
+    display: flex;
+    .progress-bar {
+        width: 0;
+        background-color: $yellow;
+        position: relative;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        flex-direction: column;
+        -webkit-box-pack: center;
+        justify-content: center;
+        white-space: nowrap;
+        transition: all 2s ease-out;
+        .progress-value {
+            font-size: 0.8rem;
+            font-weight: bold;
+            position: absolute;
+            top: -30px;
+            right: 0;            
+        }
+        &::after {
+            content: "";
+            display: block;
+            border: 15px solid transparent;
+            border-bottom: 21px solid transparent;
+            position: absolute;
+            top: -26px;
+            right: -12px;
+            border-bottom-color: $moreLightYellow;
+        }
     }
 }
 

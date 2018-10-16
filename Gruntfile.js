@@ -77,9 +77,25 @@ module.exports = function (grunt) {
          * https://www.npmjs.com/package/grunt-browserify
          */
         browserify: {
-            dist: {                
-                src: '<%= paths.scripts.src %>',
-                dest: '<%= paths.scripts.dest %>'
+            dist: { 
+                files: {
+                    '<%= paths.scripts.dest %>' : '<%= paths.scripts.src %>'
+                },
+                options: {
+                    transform: [
+                        [
+                            'babelify',
+                            {
+                                presets: [
+                                    "@babel/preset-env"
+                                ] 
+                            }
+                        ]
+                    ],
+                    browserifyOptions: {
+                        debug: true
+                    }
+                }               
             }
         },
 
@@ -140,6 +156,7 @@ module.exports = function (grunt) {
                     hostname: 'localhost',
                     port: 9001,
                     base: 'dist',
+                    open: true,
                     livereload: true
                 }
             }
